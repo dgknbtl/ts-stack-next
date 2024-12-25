@@ -31,8 +31,8 @@ A comprehensive Docker-based development environment for modern web applications
 1. **Clone the repository**: 
 
     ```bash
-    git clone https://github.com/dgknbtl/ts-stack-next.git
-    cd ts-stack-next
+    git clone https://github.com/dgknbtl/ts-stack-nuxt.git
+    cd ts-stack-nuxt
     ```
 
 2. **Install dependencies**:
@@ -41,13 +41,19 @@ A comprehensive Docker-based development environment for modern web applications
     npm install
     ```
 
-3. **Start the development environment**:
+3. **Build the project**:
+
+    ```bash
+    make build
+    ```
+
+4. **Start the development environment**:
 
     ```bash
     make up
     ```
 
-4. **For production, use**:
+5. **For production, use**:
 
     ```bash
     make up-prod
@@ -59,12 +65,12 @@ A comprehensive Docker-based development environment for modern web applications
 
 - **Start development environment**: 
   ```bash
-  docker-compose up
+  docker-compose up --build
   ```
 
 - **Start development environment in detached mode**: 
   ```bash
-  docker-compose up -d
+  docker-compose up -d --build
   ```
 
 - **Stop development environment**: 
@@ -74,7 +80,7 @@ A comprehensive Docker-based development environment for modern web applications
 
 - **Start production environment**: 
   ```bash
-  docker-compose -f docker-compose.prod.yml up
+  docker-compose -f docker-compose.prod.yml up --build
   ```
 
 - **Stop production environment**: 
@@ -86,6 +92,29 @@ A comprehensive Docker-based development environment for modern web applications
   ```bash
   docker-compose logs -f
   ```
+
+## Running the Client and Server
+
+### Client
+
+To run the client application, go to the `client` directory and run:
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+This will start the Nuxt development server for the client application.
+
+### Server
+
+To run the server application, go to the `server` directory and run:
+```bash
+cd server
+npm install
+npm run dev
+```
 
 ## Project Structure
 
